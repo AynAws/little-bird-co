@@ -66,7 +66,7 @@
 
 .contact_us_green .text-blk.contactus-subhead {
   max-width: 385px;
-  color: #939393;
+  color: black;
   font-size: 18px;
   margin-top: 0px;
   margin-right: 0px;
@@ -107,7 +107,7 @@
 }
 
 .contact_us_green .contact-text {
-  color: #939393;
+  color: black;
 }
 
 .contact_us_green .input {
@@ -583,4 +583,5 @@ body{
     background-image: url('../imgs/train5.jpg');
     background-size: cover;
     background-position: center;
+    color: black;
 }
