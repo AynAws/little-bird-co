@@ -29,18 +29,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-section{
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  background: url(imgs/train1.jpg)no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
 header{
   position: relative;
   top: 0;
@@ -112,7 +100,7 @@ header .navigation a:hover{
 
 .content .info-btn{
   color: #fff;
-  background: #ff914d;
+  background: #ff914d5e;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 500;
@@ -124,7 +112,7 @@ header .navigation a:hover{
 }
 
 .content .info-btn:hover{
-  background: #0C4F60;
+  background: #ff914d;
 }
 
 .media-icons{
@@ -255,4 +243,10 @@ label{
 
 .small {
   height: 100px;
+}
+
+
+.footer{
+  background-color: #ffc89fd7;
+  padding-top: 10px;
 }
