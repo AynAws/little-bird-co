@@ -1,58 +1,65 @@
 let trainCartCount = 3; // make it variable later
 let cartCount = 0;
-let products = [
+let products = [ // array of objects to generate cards
     {
         name: 'Trains',
         cost: 2 * trainCartCount - 0.01,
         description: 'lorem ipsum dolor',
-        image: 'imgs/products/train3'
+        image: 'imgs/products/train3.jpg'
     },
     {
         name: 'Planes',
-        cost: 1.99*trainCartCount,
+        cost: 2.99,
         description: 'lorem ipsum dolor',
-        image: 'imgs/products/train3'
+        image: 'imgs/products/plane1.jpg'
     },
     {
         name: 'Cars',
-        cost: 1.99*trainCartCount,
+        cost: 2.99,
         description: 'lorem ipsum dolor',
-        image: 'imgs/products/train3'
+        image: 'imgs/products/car2.jpg'
     },
     {
         name: 'Boats',
-        cost: 1.99*trainCartCount,
+        cost: 3.99,
         description: 'lorem ipsum dolor',
-        image: 'imgs/products/train3'
+        image: 'imgs/products/boat2.jpg'
     },
     {
-        name: 'General Block set',
-        cost: 1.99*trainCartCount,
+        name: 'General Block Set',
+        cost: 6.99,
         description: 'lorem ipsum dolor',
-        image: 'imgs/products/train3'
+        image: 'imgs/products/block1.jpg'
     }
-]
+];
 
-function generateProducts(product, productID) {
+function generateProducts(product, productID) { // will grab objects and put them in HTML
     const productContainer = document.getElementById(productID);
 
     products.forEach((member, memberIndex) => {
-        const card = document.createElement('div');
-        card.classList.add('col-12', 'col-sm-6', 'col-md-4', 'mb-3');
-    })
+      const card = document.createElement('div');
+      card.classList.add('col-12', 'col-sm-6', 'col-md-4', 'mb-3'); // responsive
+
+      // generate HTMLs
+      card.innerHTML = `
+      <div style="background-color: #ff914d;">
+      </div>
+      `
+      teamCardsContainer.appendChild(card);
+    });
 };
+generateProducts(0, products)
 
 // OLD CART CODE
-
 var shoppingCart = (function() {
-    cart = [];
+    cart = []; // stores cart items
   
   
     function Item(name, price, count) {
       this.name = name;
       this.price = price;
       this.count = count;
-    }
+    } // grabs data from data-name data-price and creates count
   
     // Save cart
     function saveCart() {
@@ -63,11 +70,11 @@ var shoppingCart = (function() {
     function loadCart() {
       cart = JSON.parse(sessionStorage.getItem('shoppingCart'));
     }
-    if (sessionStorage.getItem("shoppingCart") != null) {
+    if (sessionStorage.getItem("shoppingCart") != null) { // only load if there is data
       loadCart();
     }
   
-    var obj = {};
+    var obj = {}; // will hold methods to manage cart, generated below
   
     // Add to cart
     obj.addItemToCart = function(name, price, count) {
