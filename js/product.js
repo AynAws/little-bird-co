@@ -36,19 +36,20 @@ let products = [ // array of objects to generate cards
 function generateProducts(product, productID) { // will grab objects and put them in HTML
     const productContainer = document.getElementById(productID);
 
-    products.forEach((member, memberIndex) => {
+    product.forEach((member, productIndex) => {
       const card = document.createElement('div');
       card.classList.add('col-12', 'col-sm-6', 'col-md-4', 'mb-3'); // responsive
 
       // generate HTMLs
       card.innerHTML = `
-      <div style="background-color: #ff914d;">
+      <div style="background-color: #ff914d; width: 20rem;">
+        <img class="card-img-top" src="${products[member]}" alt="Coffee in a cup">
       </div>
       `
       teamCardsContainer.appendChild(card);
     });
 };
-generateProducts(0, products)
+generateProducts(products, 'products')
 
 // OLD CART CODE
 var shoppingCart = (function() {

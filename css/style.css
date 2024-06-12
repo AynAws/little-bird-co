@@ -250,3 +250,10 @@ label{
   background-color: #ffc89fd7;
   padding-top: 10px;
 }
+
+@font-face {
+  font-family: "Sugar & Spice";
+  src: url('Sugar\ &\ Spice\ demo.ttf') format('truetype');
+}
+
+

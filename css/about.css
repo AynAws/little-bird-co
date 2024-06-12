@@ -279,3 +279,41 @@
         justify-content: center;
     }
   }
+
+
+
+
+
+
+
+
+  body{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-image: url('../imgs/train7\ \(1\).jpg');
+    background-size: cover;
+    background-position: center;
+    color: black;
+}
+
+
+
+
+
+
+
+
+h2{
+  font-family: "Sugar & Spice";
+  font-size: 8em;
+  color: rgb(48, 34, 30);
+}
+h2 {
+  font-weight: 200;
+}
+
+
