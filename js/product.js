@@ -1,13 +1,12 @@
-let trainCartCount = 3; // make it variable later
 let cartCount = 0;
 let products = [ // array of objects to generate cards
     {
         name: 'Trains',
-        cost: 2 * trainCartCount - 0.01,
+        cost: 1.99,
         description: 'lorem ipsum dolor',
         image: 'imgs/products/train3.jpg',
         alt: 'The lead cart of a wooden toy train.',
-        desc: 'Soar through imaginative skies with this classic wooden airplane. Handcrafted from sustainable Baltic birch wood with a safe, natural harvest finish and a spinning propeller. Measures 3.5"H x 7"L x 7"W.'
+        desc: 'Embark on a charming journey with this beautiful handcrafted wooden train set. Engine and three interchangeable cars boast intricate details made from real beech wood. Large size (84cm L x 11cm H x 13cm W) with moving wheels and a fully ecological design.'
     },
     {
         name: 'Planes',
@@ -15,7 +14,7 @@ let products = [ // array of objects to generate cards
         description: 'lorem ipsum dolor',
         image: 'imgs/products/plane1.jpg',
         alt: 'Wooden toy plane.',
-        desc: ''
+        desc: 'Soar through imaginative skies with this classic wooden airplane. Handcrafted from sustainable Baltic birch wood with a safe, natural harvest finish and a spinning propeller. Measures 3.5"H x 7"L x 7"W.'
     },
     {
         name: 'Cars',
@@ -23,23 +22,26 @@ let products = [ // array of objects to generate cards
         description: 'lorem ipsum dolor',
         image: 'imgs/products/car2.jpg',
         alt: 'Wooden old timey car.',
-        desc: ''
+        desc: 'This heirloom-quality wooden car is a timeless treasure. Handcrafted from domestic and exotic hardwoods with a clear lacquer finish, this unique car will inspire generations of imaginative play. Please note potential choking hazards for small children.'
     },
     {
         name: 'Boats',
         cost: 3.99,
         description: 'lorem ipsum dolor',
         image: 'imgs/products/boat2.jpg',
-        alt: 'Wooden toy boat.'
+        alt: 'Wooden toy boat.',
+        desc: 'Set sail for bathtub adventures with this adorable wooden boat. Made from solid Maine white pine, this handcrafted toy floats and features rounded edges for safety. Includes two peg "lobster people." Size: 10.5"W x 3.5"H.'
     },
     {
         name: 'General Block Set',
         cost: 6.99,
         description: 'lorem ipsum dolor',
         image: 'imgs/products/block1.jpg',
-        alt: 'A hodgepodge of generic wooden blocks.'
+        alt: 'A hodgepodge of generic wooden blocks.',
+        desc: 'Build creativity and imagination with this high-quality, 72-piece block set. Made from naturally finished and smooth-sanded hardwood blocks, this set comes in a convenient wooden storage crate (13” L x 12” W x 2” H).'
     }
 ];
+
 
 function generateProducts(productObject, productID) { // will grab objects and put them in HTML
     const productContainer = document.getElementById(productID);
@@ -47,21 +49,22 @@ function generateProducts(productObject, productID) { // will grab objects and p
     productObject.forEach((product, productIndex) => {
       const card = document.createElement('div');
       card.classList.add('col-12', 'col-sm-6', 'col-md-4', 'mb-3'); // responsive
-
       // generate HTMLs
       card.innerHTML = `
-      <div style="background-color: #ff914d; width: 20rem;">
+      <div class="card" style="background-color: #ff914d; width: 20rem;">
         <img class="card-img-top" src="${product.image}" alt="${product.alt}">
         <div class="card-block">
           <h4 class="card-title">${product.name}</h4>
-
+          <p class="card-text">${product.desc}</p>
+            <p class="card-text">Price: $${product.cost}</p>
+            <a href="#" data-name="${product.name}" data-price="${product.cost}" class="add-to-cart btn btn-primary">Add to cart</a>
         </div>
       </div>
       `
       productContainer.appendChild(card);
     });
 };
-generateProducts(products, 'products')
+generateProducts(products, 'products');
 
 // OLD CART CODE
 var shoppingCart = (function() {
