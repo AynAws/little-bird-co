@@ -5,48 +5,60 @@ let products = [ // array of objects to generate cards
         name: 'Trains',
         cost: 2 * trainCartCount - 0.01,
         description: 'lorem ipsum dolor',
-        image: 'imgs/products/train3.jpg'
+        image: 'imgs/products/train3.jpg',
+        alt: 'The lead cart of a wooden toy train.',
+        desc: 'Soar through imaginative skies with this classic wooden airplane. Handcrafted from sustainable Baltic birch wood with a safe, natural harvest finish and a spinning propeller. Measures 3.5"H x 7"L x 7"W.'
     },
     {
         name: 'Planes',
         cost: 2.99,
         description: 'lorem ipsum dolor',
-        image: 'imgs/products/plane1.jpg'
+        image: 'imgs/products/plane1.jpg',
+        alt: 'Wooden toy plane.',
+        desc: ''
     },
     {
         name: 'Cars',
         cost: 2.99,
         description: 'lorem ipsum dolor',
-        image: 'imgs/products/car2.jpg'
+        image: 'imgs/products/car2.jpg',
+        alt: 'Wooden old timey car.',
+        desc: ''
     },
     {
         name: 'Boats',
         cost: 3.99,
         description: 'lorem ipsum dolor',
-        image: 'imgs/products/boat2.jpg'
+        image: 'imgs/products/boat2.jpg',
+        alt: 'Wooden toy boat.'
     },
     {
         name: 'General Block Set',
         cost: 6.99,
         description: 'lorem ipsum dolor',
-        image: 'imgs/products/block1.jpg'
+        image: 'imgs/products/block1.jpg',
+        alt: 'A hodgepodge of generic wooden blocks.'
     }
 ];
 
-function generateProducts(product, productID) { // will grab objects and put them in HTML
+function generateProducts(productObject, productID) { // will grab objects and put them in HTML
     const productContainer = document.getElementById(productID);
 
-    product.forEach((member, productIndex) => {
+    productObject.forEach((product, productIndex) => {
       const card = document.createElement('div');
       card.classList.add('col-12', 'col-sm-6', 'col-md-4', 'mb-3'); // responsive
 
       // generate HTMLs
       card.innerHTML = `
       <div style="background-color: #ff914d; width: 20rem;">
-        <img class="card-img-top" src="${products[member]}" alt="Coffee in a cup">
+        <img class="card-img-top" src="${product.image}" alt="${product.alt}">
+        <div class="card-block">
+          <h4 class="card-title">${product.name}</h4>
+
+        </div>
       </div>
       `
-      teamCardsContainer.appendChild(card);
+      productContainer.appendChild(card);
     });
 };
 generateProducts(products, 'products')
