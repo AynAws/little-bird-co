@@ -2,3 +2,26 @@ h4 {
     font-family: "Sugar & Spice";
     color: rgb(48, 34, 30);
 }
+
+.btn-theme {
+    background-color: #ff914d;
+}
+
+.btn-theme2 {
+    background-color: #9f551f;
+}
+
+
+
+
+body{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #eee9e3;
+    background-size: cover;
+    background-position: center;
+}

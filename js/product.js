@@ -48,7 +48,16 @@ function generateProducts(productObject, productID) { // will grab objects and p
 
     productObject.forEach((product, productIndex) => {
       const card = document.createElement('div');
-      card.classList.add('col-12', 'col-sm-6', 'col-md-4', 'mb-3'); // responsive
+      switch (productIndex) { // makes top three and bottom two centered
+        case 0:
+        case 1:
+        case 2:
+          card.classList.add('col-12', 'col-sm-6', 'col-md-4', 'mb-3', 'mx-auto', 'overflow-scroll');
+          break;
+        case 3:
+        case 4:
+          card.classList.add('col-12', 'col-sm-6', 'mb-3', 'mx-auto', 'overflow-scroll');
+      }
       // generate HTMLs
       card.innerHTML = `
       <div class="card" style="background-color: #ff914d; width: 20rem;">
@@ -57,7 +66,7 @@ function generateProducts(productObject, productID) { // will grab objects and p
           <h4 class="card-title">${product.name}</h4>
           <p class="card-text">${product.desc}</p>
             <p class="card-text">Price: $${product.cost}</p>
-            <a href="#" data-name="${product.name}" data-price="${product.cost}" class="add-to-cart btn btn-primary">Add to cart</a>
+            <a href="#" data-name="${product.name}" data-price="${product.cost}" class="add-to-cart btn btn-theme2">Add to cart</a>
         </div>
       </div>
       `
@@ -220,9 +229,9 @@ var shoppingCart = (function() {
       output += "<tr>"
         + "<td>" + cartArray[i].name + "</td>"
         + "<td>(" + cartArray[i].price + ")</td>"
-        + "<td><div class='input-group'><button class='minus-item input-group-addon btn btn-primary' data-name=" + cartArray[i].name + ">-</button>"
+        + "<td><div class='input-group'><button class='minus-item input-group-addon btn btn-theme' data-name=" + cartArray[i].name + ">-</button>"
         + "<input type='number' class='item-count form-control' data-name='" + cartArray[i].name + "' value='" + cartArray[i].count + "'>"
-        + "<button class='plus-item btn btn-primary input-group-addon' data-name=" + cartArray[i].name + ">+</button></div></td>"
+        + "<button class='plus-item btn btn-theme input-group-addon' data-name=" + cartArray[i].name + ">+</button></div></td>"
         + "<td><button class='delete-item btn btn-danger' data-name=" + cartArray[i].name + ">X</button></td>"
         + " = "
         + "<td>" + cartArray[i].total + "</td>"

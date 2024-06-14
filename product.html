@@ -27,7 +27,7 @@
 
   <body>
         <!-- Navbar -->
-        <section>
+  <nav>
             <header>
               <h2><a class="logo"><img src="imgs/text-logo.png" alt="Little Bird" class="small"></a></h2>
               <div class="navigation">
@@ -37,10 +37,16 @@
                 <a href="contact.html">Contact</a>
               </div>
             </header>
+          </nav>
 
-            <div id="products" class="row row-cols-auto"></div>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cart">Cart (<span class="total-count">8</span>)</button>
-            <button class="clear-cart btn btn-danger">Clear Cart</button>
+            <section class="container mt-5">
+              <div id="products" class="row"></div>
+            </section>
+            <section class="container mt-1">
+              <button type="button" class="btn btn-theme" data-bs-toggle="modal" data-bs-target="#cart">Cart (<span class="total-count">8</span>)</button>
+              <button class="clear-cart btn btn-danger">Clear Cart</button>
+            </section>
+
             <!-- Modal -->
             <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
               <div class="modal-dialog modal-lg" role="document">
@@ -56,9 +62,9 @@
                     <div>Total price: $<span class="total-cart">0</span></div>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-theme2" data-bs-dismiss="modal">Close</button>
                     <a href="check.html">
-                      <button type="button" class="btn btn-primary">Order now</button>
+                      <button type="button" class="btn btn-theme">Order now</button>
                     </a>
                   </div>
                 </div>
