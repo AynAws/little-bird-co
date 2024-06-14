@@ -1,0 +1,11 @@
+.background {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-image: url('../imgs/WIN_20240614_09_23_25_Pro.jpg');
+    background-size: cover;
+    background-position: center;
+}
